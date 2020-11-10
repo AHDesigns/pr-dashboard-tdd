@@ -16,11 +16,19 @@ RUN yarn install --prod
 RUN cp -R node_modules prod_modules
 RUN yarn install
 
-# BUILD
-FROM base as build
+# UNIT TEST
+FROM base as unit-test
 WORKDIR $APP_HOME
 
 COPY . .
+
+RUN yarn lint:ts
+RUN yarn lint
+RUN yarn test
+
+# BUILD
+FROM unit-test as build
+WORKDIR $APP_HOME
 
 RUN yarn build:client
 RUN yarn build:server
