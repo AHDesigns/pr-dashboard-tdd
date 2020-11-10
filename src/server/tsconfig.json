@@ -1,17 +1,9 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist/",
-    "strict": true,
+    "outDir": "../dist/",
     "sourceMap": true,
     "target": "esnext",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "noEmitOnError": false,
-    "baseUrl": "./",
-    "paths": {
-      "utils/*": [ "utils/*" ],
-      "shared/*": [ "shared/*" ]
-    }
+    "module": "commonjs"
   }
 }

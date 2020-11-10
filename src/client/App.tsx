@@ -2,9 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-interface Props { name: string }
+interface Props {
+  name: string;
+}
 const App: React.FC<Props> = (props) => {
-  const x = props.name.toInt
+  const x = props.name.toInt;
   return (
     <div className='App'>
       <header className='App-header'>
@@ -23,6 +25,6 @@ const App: React.FC<Props> = (props) => {
       </header>
     </div>
   );
-}
+};
 
 export default App;
