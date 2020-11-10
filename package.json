@@ -39,13 +39,16 @@
   "scripts": {
     "start": "NODE_ENV=production NODE_PATH=build/ node build/server.js",
     "test": "react-scripts test",
+    "build": "rm -rf build && yarn build:client && yarn build:server",
     "dev:client": "react-scripts start",
     "dev:server": "nodemon",
     "build:client": "react-scripts build",
     "build:server": "tsc --project tsconfig.build.json",
     "lint:ts": "tsc --project tsconfig.json --noEmit",
-    "lint": "eslint --ext ts,tsx ./src",
-    "lint:fix": "yarn lint -- --fix"
+    "lint:js": "eslint --ext ts,tsx ./src",
+    "lint:fix": "yarn lint:js --fix",
+    "lint:css": "echo \"not setup\"",
+    "lint": "yarn lint:js && yarn lint:css && yarn lint:ts"
   },
   "browserslist": {
     "production": [
