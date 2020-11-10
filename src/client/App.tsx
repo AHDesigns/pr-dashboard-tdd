@@ -1,4 +1,5 @@
 import React from 'react';
+import { SomeSharedType } from 'shared/types';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,7 +7,12 @@ interface Props {
   name: string;
 }
 
+function x(t: SomeSharedType): boolean {
+  return t.exists;
+}
+
 const App: React.FC<Props> = (props) => {
+  console.log(x({ exists: false }));
   return (
     <div className='App'>
       <header className='App-header'>

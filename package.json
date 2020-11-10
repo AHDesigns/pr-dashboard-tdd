@@ -37,12 +37,13 @@
     "ts-jest": "^26.4.4"
   },
   "scripts": {
-    "start": "NODE_ENV=production NODE_PATH=dist/ node dist/index.js",
+    "start": "NODE_ENV=production NODE_PATH=build/ node build/server.js",
+    "test": "react-scripts test",
     "client:start": "react-scripts start",
     "client:build": "react-scripts build",
-    "client:test": "react-scripts test",
     "server:dev": "nodemon",
-    "ts": "tsc --project tsconfig.app.json --noEmit",
+    "server:build": "tsc --project tsconfig.build.json",
+    "lint:ts": "yarn server:build --noEmit",
     "lint": "eslint --ext ts,tsx ./src",
     "lint:fix": "yarn lint -- --fix"
   },

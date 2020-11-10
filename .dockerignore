@@ -1,0 +1,9 @@
+*
+# build dependencies
+!src/
+!public/
+!package.json
+!yarn.lock
+!tsconfig.base.json
+!tsconfig.build.json
+!tsconfig.json
