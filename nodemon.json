@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "src/server"
+  ],
+  "env": {
+    "NODE_ENV": "dev",
+    "NODE_PATH": "src/server"
+  },
+  "exec": "cd src/server && ts-node ./index.ts",
+  "ext": "ts json"
+}
