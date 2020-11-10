@@ -1,5 +1,4 @@
 import React from 'react';
-import { SomeSharedType } from 'shared/types';
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,12 +6,7 @@ interface Props {
   name: string;
 }
 
-function x(t: SomeSharedType): boolean {
-  return t.exists;
-}
-
-const App: React.FC<Props> = (props) => {
-  console.log(x({ exists: false }));
+const App: React.FC<Props> = () => {
   return (
     <div className='App'>
       <header className='App-header'>
@@ -20,7 +14,6 @@ const App: React.FC<Props> = (props) => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <p>Hello {props.name}</p>
         <a
           className='App-link'
           href='https://reactjs.org'

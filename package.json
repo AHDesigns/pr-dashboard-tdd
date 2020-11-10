@@ -43,7 +43,7 @@
     "dev:server": "nodemon",
     "build:client": "react-scripts build",
     "build:server": "tsc --project tsconfig.build.json",
-    "lint:ts": "yarn build:server --noEmit",
+    "lint:ts": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint --ext ts,tsx ./src",
     "lint:fix": "yarn lint -- --fix"
   },
