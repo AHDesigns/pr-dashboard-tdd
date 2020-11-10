@@ -5,8 +5,8 @@ import './App.css';
 interface Props {
   name: string;
 }
+
 const App: React.FC<Props> = (props) => {
-  const x = props.name.toInt;
   return (
     <div className='App'>
       <header className='App-header'>
@@ -14,6 +14,7 @@ const App: React.FC<Props> = (props) => {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+        <p>Hello {props.name}</p>
         <a
           className='App-link'
           href='https://reactjs.org'
