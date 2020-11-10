@@ -39,10 +39,10 @@
   "scripts": {
     "start": "NODE_ENV=production NODE_PATH=build/ node build/server.js",
     "test": "react-scripts test",
-    "client:start": "react-scripts start",
-    "client:build": "react-scripts build",
-    "server:dev": "nodemon",
-    "server:build": "tsc --project tsconfig.build.json",
+    "dev:client": "react-scripts start",
+    "dev:server": "nodemon",
+    "build:client": "react-scripts build",
+    "build:server": "tsc --project tsconfig.build.json",
     "lint:ts": "yarn server:build --noEmit",
     "lint": "eslint --ext ts,tsx ./src",
     "lint:fix": "yarn lint -- --fix"
