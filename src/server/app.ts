@@ -1,4 +1,4 @@
-import { example } from 's-utils/types';
+import { example } from 'utils/types';
 
 const a: example = { str: 'hello', num: 3 };
 

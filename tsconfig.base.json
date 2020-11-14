@@ -2,9 +2,7 @@
   "compilerOptions": {
     "baseUrl": "src/",
     "paths": {
-      "c-utils/*": ["client/utils/*"],
-      "c-components/*": ["client/components/*"],
-      "s-utils/*": ["server/utils/*"],
+      "utils/*": ["server/utils/*"],
       "shared/*": ["shared/*"]
     }
   }
