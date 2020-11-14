@@ -1,14 +1,15 @@
 import React from 'react';
+import Provider from 'client/components/Provider';
+import testids from 'client/utils/testids';
 import './App.css';
+import { ErrorBoundary } from './ErrorBoundary';
 
 const App: React.FC = () => {
   return (
-    <div data-testid='app' className='app'>
-      <header className='app__header'>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </header>
+    <div data-testid={testids.APP_VIEW} className='app'>
+      <ErrorBoundary>
+        <Provider>{() => <div></div>}</Provider>
+      </ErrorBoundary>
     </div>
   );
 };
