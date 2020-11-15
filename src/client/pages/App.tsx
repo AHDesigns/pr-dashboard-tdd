@@ -1,8 +1,8 @@
 import React from 'react';
 import Provider from 'client/components/Provider';
+import { ErrorBoundary } from 'client/components/ErrorBoundary';
 import testids from 'client/utils/testids';
 import './App.css';
-import { ErrorBoundary } from './ErrorBoundary';
 
 const App: React.FC = () => {
   return (
