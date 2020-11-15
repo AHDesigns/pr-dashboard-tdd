@@ -12,7 +12,7 @@ module.exports = {
     'prettier/@typescript-eslint',
   ],
   rules:  {
-    'no-console': 'off',
+    'no-console': 'error',
     'prettier/prettier': 'error',
     'func-names': 'off',
     '@typescript-eslint/no-use-before-define': 0,

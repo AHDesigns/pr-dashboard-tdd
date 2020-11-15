@@ -1,10 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import testids from 'client/utils/testids';
-import {
-  disableTestConsoleErrors,
-  childComponentThatThrowsError,
-} from 'client/utils/testHelpers';
+import { disableTestConsoleErrors } from 'client/utils/testHelpers';
 import Provider from 'client/components/Provider';
 import App from './App';
 
@@ -36,7 +33,9 @@ describe('App', () => {
   describe('when an error is thrown', () => {
     beforeAll(() => {
       disableTestConsoleErrors();
-      (Provider as jest.Mock).mockImplementation(childComponentThatThrowsError);
+      (Provider as jest.Mock).mockImplementation(() => {
+        throw new Error('poop');
+      });
     });
 
     it('still renders the app', () => {
