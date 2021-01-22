@@ -52,6 +52,10 @@
     "lint:css": "stylelint \"src/client/**/*.css\"",
     "lint": "yarn lint:js && yarn lint:css && yarn lint:ts"
   },
+  "volta": {
+    "node": "14.15.4",
+    "yarn": "1.22.10"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
