@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { createContext, FC } from 'react';
 
-export type ProviderRenderProps = {
+export type Pancakes = {
   subscribtions: number[];
 };
 
-export interface IProvider {
-  children(props: ProviderRenderProps): JSX.Element;
-}
+export const dataContext = createContext({} as Pancakes);
 
-const Provider: React.FC<IProvider> = ({ children }) => (
-  <div>{children({ subscribtions: [1] })}</div>
-);
-
-export default Provider;
+export const DataProvider: FC = ({ children }) => {
+  const data: Pancakes = { subscribtions: [] };
+  return <dataContext.Provider value={data}>{children}</dataContext.Provider>;
+};

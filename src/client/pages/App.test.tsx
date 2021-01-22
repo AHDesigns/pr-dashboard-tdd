@@ -2,10 +2,12 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import testids from 'client/utils/testids';
 import { disableTestConsoleErrors } from 'client/utils/testHelpers';
-import Provider from 'client/components/Provider';
+import { DataProvider } from 'client/components/Provider';
 import App from './App';
 
-jest.mock('../components/Provider');
+jest.mock('../components/Provider', () => ({
+  DataProvider: jest.fn(),
+}));
 
 describe('App', () => {
   beforeEach(() => {
@@ -14,8 +16,8 @@ describe('App', () => {
 
   describe('when no errors are thrown', () => {
     beforeAll(() => {
-      (Provider as jest.Mock).mockImplementation(() => (
-        <div data-testid='provider'>poop</div>
+      (DataProvider as jest.Mock).mockImplementation(({ children }) => (
+        <div data-testid='provider'>{children}</div>
       ));
     });
 
@@ -33,7 +35,7 @@ describe('App', () => {
   describe('when an error is thrown', () => {
     beforeAll(() => {
       disableTestConsoleErrors();
-      (Provider as jest.Mock).mockImplementation(() => {
+      (DataProvider as jest.Mock).mockImplementation(() => {
         throw new Error('poop');
       });
     });

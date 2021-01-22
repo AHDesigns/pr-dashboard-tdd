@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react';
 
 import testids from '../utils/testids';
 import { subscribedReposView } from './subscribedReposView';
-import { ProviderRenderProps } from 'client/components/Provider';
+import { Pancakes } from 'client/components/Provider';
 
 describe('subscribedReposView', () => {
-  let mockProvider: ProviderRenderProps = { subscribtions: [] };
+  let mockProvider: Pancakes = { subscribtions: [] };
 
   beforeEach(() => {
     render(<div>{subscribedReposView(mockProvider)}</div>);
